@@ -1,0 +1,23 @@
+/* admin_style.css (Correção Final, se as outras falharem) */
+
+/* Garante que o elemento raiz da aplicação Vuetify pegue a cor escura */
+body.dark .v-application__wrap {
+    background-color: var(--light-bg) !important;
+}
+
+/* Opcional: Garante que a barra de rolagem (que pode ser parte do v-main) também escureça */
+body.dark .v-main__wrap {
+    background-color: var(--light-bg) !important;
+}
+
+
+/*   o número do dia no calendário */
+.v-calendar-weekly__day-label {
+    font-size: 5rem !important; /* Aumente este valor conforme o desejado */
+    font-weight: 900 !important; /* Deixa em super negrito para destacar */
+}
+
+/* Opcional: Garante que os títulos dos eventos continuem no tamanho que você definiu anteriormente */
+.v-event-title {
+    font-size: 1.7rem !important; 
+}

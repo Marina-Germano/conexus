@@ -1,0 +1,87 @@
+/* header_styles.css */
+
+/* ----------------------------------------------------
+ ESTILOS PARA DROPDOWNS E BUSCA (PADRÃO)
+---------------------------------------------------- */
+
+/* Garante que o dropdown fique no escopo do app-bar */
+.nav-wrapper {
+  position: relative;
+}
+
+/* ---------------------------
+ DROPDOWN DE PERFIL
+---------------------------- */
+.profile-menu {
+  position: absolute;
+  top: 85px;
+  right: 20px;
+  width: 240px;
+  background: var(--color-background, #fff); /* Usa variáveis de tema se definidas, ou fallback */
+  border: 1px solid var(--color-border, #ddd);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  transform: scale(0);
+  transform-origin: top right;
+  transition: 0.15s ease;
+  z-index: 9999 !important;
+}
+
+.profile-menu.active {
+  transform: scale(1);
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-header h3 {
+  font-size: 1.3rem;
+  color: var(--color-heading, #222);
+  margin: 0;
+}
+
+.profile-header .email {
+  color: var(--color-text, #444);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ---------------------------
+ BARRA DE BUSCA EXPANSÍVEL
+---------------------------- */
+/* Move a barra de busca para baixo da app-bar */
+.search-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.15s ease;
+  padding: 0 1rem;
+}
+
+.search-container.active {
+  transform: scaleY(1);
+}
+
+/* ----------------------------------------------------
+ SOBRESCRIÇÕES DO CAMPO DE BUSCA (ESTILO VERDE)
+---------------------------------------------------- */
+.search-container :deep(.v-field) {
+    /* Cor um pouco mais escura que o fundo da app-bar (#008080) */
+    background-color: #005A5A !important; 
+    border-radius: 4px;
+    height: 40px; 
+    color: white !important;
+}
+
+.search-container :deep(.v-field__input) {
+    color: white !important;
+}
+
+.search-container :deep(input::placeholder),
+.search-container :deep(.v-label) {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
